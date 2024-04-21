@@ -1,0 +1,437 @@
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  color: #333;
+  max-width: 100%;
+}
+
+.window {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-image: url("logo.png");
+  background-repeat: no-repeat; /* Don't repeat the background */
+  background-size: 350px; /* Cover the entire window without stretching */
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+  background-blend-mode: overlay;
+  z-index: 9999; /* Set a high z-index value to ensure the window appears in front */
+}
+
+/* Close button styling */
+.close-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Content area styling */
+.content {
+  padding: 10px 20px 20px; /* top padding increased to 50px */
+  font-size: 1600px;
+  font-family: monospace;
+  color: white;
+}
+.content h2 {
+  font-size: 20px; /* Adjust font size for paragraphs */
+}
+
+.content p {
+  font-size: 10px;
+}
+
+.next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("back.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  backface-visibility: 10%;
+  color: white;
+  margin-top: -20px;
+}
+
+.next p {
+  text-align: left;
+  text-align: center;
+  margin-right: 10px;
+  font-size: 40px;
+  color: white;
+  padding-top: 2%;
+  padding: 10%;
+}
+
+.happy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("blo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  backface-visibility: 10%;
+  color: white;
+  margin-top: -20px;
+}
+
+.happy p {
+  text-align: left;
+  text-align: center;
+  margin-right: 10px;
+  font-size: 40px;
+  color: white;
+  padding-top: 2%;
+  padding: 10%;
+}
+
+.intro {
+  width: auto; /* Full width */
+  height: 100vh; /* Full height of the viewport */
+  overflow: hidden;
+  background-image: url("bgc.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; /* Adjust opacity here */
+  color: white; /* Text color */
+  display: flex; /* Use flexbox for alignment */
+  justify-content: flex-start; /* Align items to the start (left) */
+  align-items: center; /* Center vertically */
+  padding-left: 20px; /* Add padding to push text away from the left edge */
+}
+
+.intro p {
+  text-align: center;
+  font-size: 40px;
+}
+
+/* Styling for the slideshow container */
+.slideshow {
+  width: 70%; /* Adjust width as needed */
+  height: 300px; /* Adjust height as needed */
+  position: relative;
+  margin-left: auto; /* Push the slideshow to the right */
+  padding-right: 20px; /* Add padding to push images away from the right edge */
+}
+
+/* Styling for the slideshow images */
+.slideshow img {
+  width: 80%; /* Adjust image size as needed */
+  height: auto;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 1s ease-in-out; /* Smooth transition */
+  border: 10px solid #333; /* Set border around the "phone" */
+  border-radius: 20px; /* Add border radius for rounded corners */
+  overflow: hidden;
+  margin-right: 25%;
+}
+
+/* Initially show only the first image */
+.slideshow img:first-child {
+  opacity: 1;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 2px;
+  position: fixed; /* Fix the navigation bar at the top */
+  width: 100%; /* Make it full-width */
+  top: 0; /* Align it at the top */
+  z-index: 1000; /* Ensure it's above other content */
+  height: min-content;
+  transition: background-color 0.3s ease; /* Add smooth transition */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 50px;
+}
+
+.logo {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%; /* Make it a circle */
+  padding: 7px; /* Adjust padding as needed */
+}
+
+.logo img {
+  height: 100px; /* Adjust logo height as needed */
+  cursor: pointer;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  float: right; /* Align the toggle button to the right */
+  position: relative;
+}
+
+.menu {
+  display: flex;
+  float: right;
+  font-size: 25px;
+  margin: 0 0 0;
+}
+
+.menu li {
+  display: inline-block;
+  margin-right: 20px;
+  content: initial;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  margin-right: 50px;
+}
+
+.menu a:hover {
+  color: blue; /* Color on hover */
+}
+
+.menu a.active {
+  color: blue; /* Color for active link */
+}
+
+/* Hero Section Styles */
+#hero {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+#prevBtn,
+#nextBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px 20px;
+  font-size: 50px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: white;
+  outline: none;
+  transition: opacity 0.3s;
+  z-index: 1; /* Ensure buttons are above the background */
+}
+
+#prevBtn,
+#nextBtnzx:hover {
+  opacity: 0.7;
+  color: aqua;
+}
+
+#prevBtn {
+  left: 20px;
+}
+
+#nextBtn {
+  right: 20px;
+}
+
+#hero h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+#hero p {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff6600;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #cc5500;
+}
+
+/* Section Styles */
+section {
+  padding: 50px 0;
+}
+
+section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+section p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Footer Section Styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+/* Hide the checkbox by default */
+/* Hide the checkbox by default */
+#menu-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  /* Adjustments for smaller screens */
+  body,
+  h1,
+  h2,
+  h3,
+  p,
+  ul,
+  li {
+    font-size: 16px; /* Adjust font sizes */
+  }
+
+  .content {
+    font-size: 16px; /* Adjust font size */
+    padding-top: 20px; /* Adjust padding top */
+  }
+
+  .content h2 {
+    font-size: 24px; /* Adjust font size */
+  }
+
+  .content p {
+    font-size: 16px; /* Adjust font size */
+  }
+
+  .next p,
+  .happy p,
+  .intro p {
+    font-size: 16px; /* Adjust font size */
+  }
+
+  .intro {
+    height: 100vh; /* Keep height fixed */
+  }
+
+  .slideshow {
+    width: 100%; /* Full width */
+  }
+
+  .slideshow img {
+    width: 80%; /* Adjust image width as needed */
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute; /* Position the image absolutely */
+    top: 50%; /* Position the image vertically in the middle */
+    left: 50%; /* Position the image horizontally in the middle */
+    transform: translate(-50%, -50%); /* Center the image */
+    border: 10px solid #333; /* Set border around the "phone" */
+    border-radius: 20px; /* Add border radius for rounded corners */
+    overflow: hidden;
+    margin: 0; /* Remove margin */
+  }
+
+  .window {
+    width: 90%; /* Adjust width for smaller screens */
+    max-width: 300px; /* Set maximum width */
+    height: auto; /* Auto height */
+  }
+
+  header h1 {
+    font-size: 30px; /* Adjust font size */
+  }
+  #menu-toggle {
+    display: none; /* Hide the checkbox by default */
+  }
+
+  #menu-toggle:checked + .menu {
+    display: flex; /* Show menu when checkbox is checked */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    z-index: 1000; /* Ensure it's above other content */
+  }
+
+  .menu {
+    display: none; /* Hide menu by default */
+    text-align: center;
+    width: 100%;
+    height: 100%; /* Ensure menu fills the entire screen */
+    padding-top: 60px; /* Add padding to center menu content vertically */
+    padding-left: 90px;
+  }
+
+  .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .menu li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .logo {
+    display: block; /* Ensure logo is always visible */
+    position: fixed; /* Keep the logo fixed */
+    top: 20px; /* Adjust top positioning as needed */
+
+    z-index: 1001; /* Ensure logo is above other content */
+  }
+
+  /* Style the toggle button for mobile */
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+    font-size: 30px;
+    line-height: 1;
+    position: absolute;
+    top: 25px;
+    right: 10px;
+    z-index: 1002; /* Ensure it's above logo */
+    margin-right: 15px;
+  }
+}

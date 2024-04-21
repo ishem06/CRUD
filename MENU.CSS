@@ -1,0 +1,307 @@
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  color: #333;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.container {
+  margin: 0 auto; /* Center the container */
+  width: 90%;
+  font-family: Copperplate, Papyrus, fantasy;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 2px;
+  position: fixed; /* Fix the navigation bar at the top */
+  width: 100%; /* Make it full-width */
+  top: 0; /* Align it at the top */
+  z-index: 1000; /* Ensure it's above other content */
+  height: min-content;
+  transition: background-color 0.3s ease; /* Add smooth transition */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 50px;
+}
+
+.logo {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%; /* Make it a circle */
+  padding: 7px; /* Adjust padding as needed */
+}
+
+.logo img {
+  height: 100px; /* Adjust logo height as needed */
+  cursor: pointer;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  float: right; /* Align the toggle button to the right */
+  position: relative;
+}
+
+.menu {
+  display: flex;
+  float: right;
+  font-size: 25px;
+  margin: 0 0 0;
+}
+
+.menu li {
+  display: inline-block;
+  margin-right: 20px;
+  content: initial;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  margin-right: 50px;
+}
+
+.menu a:hover {
+  color: blue; /* Color on hover */
+}
+
+.menu a.active {
+  color: blue; /* Color for active link */
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.hero {
+  overflow: hidden;
+  background-image: url("chix.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff6600;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #cc5500;
+}
+
+.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  margin-top: -440px; /* Adjust as needed */
+}
+
+.intro img {
+  float: right;
+  max-width: 22%;
+  padding-top: 2%;
+}
+
+.intro p {
+  text-align: left;
+  text-align: center;
+  margin-right: 10px;
+  font-size: 30px;
+  color: white;
+  padding-top: 2%;
+}
+
+.phh {
+  background-color: black;
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+}
+
+.history {
+  overflow: hidden;
+  background-image: url("brik.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.menunas img {
+  text-align: center;
+  margin-left: 25%;
+  width: 50%; /* Adjust the width as needed */
+  height: 1000%;
+  padding-top: 20%;
+  padding-bottom: 20%;
+}
+
+/* CSS styles for frame-like design */
+.frame {
+  border: 4px solid #ccc; /* Border around the photo */
+  padding: 5px; /* Padding inside the frame */
+  border-radius: 10px; /* Rounded corners for the frame */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Shadow effect */
+}
+
+.frame img {
+  width: 100%; /* Ensure the photo fills the frame */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px; /* Rounded corners for the photo */
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  /* Adjustments for smaller screens */
+  body,
+  h1,
+  h2,
+  h3,
+  p,
+  ul,
+  li {
+    font-size: 16px; /* Adjust font sizes */
+  }
+
+  .content {
+    font-size: 16px; /* Adjust font size */
+    padding-top: 20px; /* Adjust padding top */
+  }
+
+  .content h2 {
+    font-size: 24px; /* Adjust font size */
+  }
+
+  .content p {
+    font-size: 16px; /* Adjust font size */
+  }
+
+  .next p,
+  .happy p,
+  .intro p {
+    font-size: 16px; /* Adjust font size */
+  }
+
+  .intro {
+    height: 100vh; /* Keep height fixed */
+  }
+
+  .slideshow {
+    width: 100%; /* Full width */
+  }
+
+  .slideshow img {
+    width: 80%; /* Adjust image width as needed */
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute; /* Position the image absolutely */
+    top: 50%; /* Position the image vertically in the middle */
+    left: 50%; /* Position the image horizontally in the middle */
+    transform: translate(-50%, -50%); /* Center the image */
+    border: 10px solid #333; /* Set border around the "phone" */
+    border-radius: 20px; /* Add border radius for rounded corners */
+    overflow: hidden;
+    margin: 0; /* Remove margin */
+  }
+
+  .window {
+    width: 90%; /* Adjust width for smaller screens */
+    max-width: 300px; /* Set maximum width */
+    height: auto; /* Auto height */
+  }
+
+  header h1 {
+    font-size: 30px; /* Adjust font size */
+  }
+  #menu-toggle {
+    display: none; /* Hide the checkbox by default */
+  }
+
+  #menu-toggle:checked + .menu {
+    display: flex; /* Show menu when checkbox is checked */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    z-index: 1000; /* Ensure it's above other content */
+  }
+
+  .menu {
+    display: none; /* Hide menu by default */
+    text-align: center;
+    width: 100%;
+    height: 100%; /* Ensure menu fills the entire screen */
+    padding-top: 60px; /* Add padding to center menu content vertically */
+    padding-left: 90px;
+  }
+
+  .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .menu li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .logo {
+    display: block; /* Ensure logo is always visible */
+    position: fixed; /* Keep the logo fixed */
+    top: 20px; /* Adjust top positioning as needed */
+
+    z-index: 1001; /* Ensure logo is above other content */
+  }
+
+  /* Style the toggle button for mobile */
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+    font-size: 30px;
+    line-height: 1;
+    position: absolute;
+    top: 25px;
+    right: 10px;
+    z-index: 1002; /* Ensure it's above logo */
+    margin-right: 15px;
+  }
+}
